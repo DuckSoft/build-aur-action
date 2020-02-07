@@ -1,5 +1,5 @@
-#!/bin/sh -l
+#!/bin/bash
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+git clone "https://aur.archlinux.org/$1.git"
+cd "$1"
+makepkg -sf --noconfirm
