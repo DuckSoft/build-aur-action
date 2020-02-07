@@ -1,15 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Build AUR Package'
+description: 'Test build an AUR package in Docker container'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  repo-name:
+    description: 'AUR repository name to build'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'qv2ray-dev-git'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.repo-name }}
