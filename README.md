@@ -18,5 +18,5 @@ strategy:
 steps:
   - uses: zjuyk/archlinux-build-aur@master
     with:
-	  pkg-name: ${{ matrix.pkgs }}
+      pkg-name: ${{ matrix.pkgs }}
 ```
