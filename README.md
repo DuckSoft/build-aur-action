@@ -20,3 +20,8 @@ steps:
     with:
       pkg-name: ${{ matrix.pkgs }}
 ```
+
+**To satisfy the aurpublish you should add PKGBUILD and .SRCINFO to a directory with the same name of pkgname** 
+
+
+- [demo](https://github.com/zjuyk/repo)
