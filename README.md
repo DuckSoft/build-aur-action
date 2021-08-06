@@ -1,12 +1,22 @@
-# build-aur-action
+# archlinux-build-aur action
 
 ## Example usage
 ```yaml
-uses: DuckSoft/build-aur-action@master
+uses: zjuyk/archlinux-build-aur@master
 with:
-  repo-name: qv2ray-dev-git
+  pkg-name: wps-office
 ```
 
-## Inputs
-### `repo-name`
-**Required** The name of the AUR repo to build. Default `"qv2ray-dev-git"`.
+## Tips
+### use matrix to build multi pkgs
+
+```yml
+strategy:
+  matrix:
+    pkgs: [ wps-office, ttf-wps-fonts ]
+
+steps:
+  - uses: zjuyk/archlinux-build-aur@master
+    with:
+	  pkg-name: ${{ matrix.pkgs }}
+```
