@@ -1,8 +1,8 @@
-# archlinux-build-aur action
+# pkgbuild-aur action
 
 ## Example usage
 ```yaml
-uses: zjuyk/archlinux-build-aur@master
+uses: zjuyk/pkgbuild-aur@master
 with:
   pkg-name: wps-office
 ```
@@ -16,7 +16,7 @@ strategy:
     pkgs: [ wps-office, ttf-wps-fonts ]
 
 steps:
-  - uses: zjuyk/archlinux-build-aur@master
+  - uses: zjuyk/pkgbuild-aur@master
     with:
       pkg-name: ${{ matrix.pkgs }}
 ```
