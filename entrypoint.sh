@@ -40,6 +40,10 @@ install_deps() {
     grep -E 'depends' .SRCINFO | \
         sed -e 's/.*depends = //' -e 's/:.*//' | \
         xargs yay -S --noconfirm
+	# install the package make dependencies
+	grep -E 'makedepends' .SRCINFO | \
+		sed -e 's/.*depends = //' -e 's/:.*//' | \
+		xargs yay -S --noconfirm
 }
 
 cd $pkgbuild_dir
