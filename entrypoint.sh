@@ -16,6 +16,8 @@ cd /tmp/yay
 makepkg -sf --install --noconfirm
 cd -
 
+pacman -Syu --noconfirm
+
 # build packages
 sudo -u build yay -Sw $1 --noconfirm
 pwd
