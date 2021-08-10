@@ -1,11 +1,11 @@
-name: 'Build AUR Package'
-description: 'Build an AUR package in Docker container'
+name: 'Build ArchLinux Packages'
+description: 'Build an ArchLinux package in Docker container'
 branding:
   icon: user-check
   color: gray-dark
 inputs:
   pkg-name:
-    description: 'AUR repository name to build'
+    description: 'ArchLinux package name to build'
     required: true
     default: 'wps-office'
 runs:
