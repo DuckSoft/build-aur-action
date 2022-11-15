@@ -1,12 +1,27 @@
-# build-aur-action
+# pkgbuild-aur action
 
 ## Example usage
 ```yaml
-uses: DuckSoft/build-aur-action@master
+uses: zjuyk/pkgbuild-aur@master
 with:
-  repo-name: qv2ray-dev-git
+  pkg-name: wps-office
 ```
 
-## Inputs
-### `repo-name`
-**Required** The name of the AUR repo to build. Default `"qv2ray-dev-git"`.
+## Tips
+### use matrix to build multi pkgs
+
+```yml
+strategy:
+  matrix:
+    pkgs: [ wps-office, ttf-wps-fonts ]
+
+steps:
+  - uses: zjuyk/pkgbuild-aur@master
+    with:
+      pkg-name: ${{ matrix.pkgs }}
+```
+
+**To satisfy the aurpublish you should add PKGBUILD and .SRCINFO to a directory with the same name of pkgname** 
+
+
+- [demo](https://github.com/zjuyk/repo)
